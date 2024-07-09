@@ -1,3 +1,4 @@
 from subprocess import call 
 
-call(["python", "main.py"]) #calls and executes the main.py python file
+# calls and executes the main.py python file
+call(["python", "main.py"]) 
