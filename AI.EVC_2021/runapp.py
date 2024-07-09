@@ -1,3 +1,3 @@
-from subprocess import call #import the call function from the subprocess module
+from subprocess import call 
 
 call(["python", "main.py"]) #calls and executes the main.py python file
