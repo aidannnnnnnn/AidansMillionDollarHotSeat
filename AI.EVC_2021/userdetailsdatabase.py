@@ -1,5 +1,7 @@
 # import the date time module
-import datetime                     
+import datetime      
+from kivy.uix.popup import Popup   
+from kivy.uix.label import Label              
 
 # Creates an object constructor for the Data Base
 class DataBase: 
@@ -30,8 +32,8 @@ class DataBase:
     # this function demonstrates what happens if the user wants to "get" their email
     def get_user(self, email):                                          
         # if the email exists in the user dictionary
-        if email in self.users:                                         
-            # return the users email
+        if email in self.users:                                    
+            # return the details associated with the email
             return self.users[email]                                    
         else:
             # else return that the user does not exist
@@ -47,11 +49,6 @@ class DataBase:
             self.save()                                                                         
             # Return 1: The email was created
             return 1                                                                            
-        else:
-            # If the email is in the user dictionary, print that it already exists
-            print("Email exists already")           
-            # return -1 to show the occurrence was False
-            return -1                               
 
     # this function shows what happens when the user validates their email and password (i.e. the app confirms if their details are legitimate)
     def validate(self, email, password):                

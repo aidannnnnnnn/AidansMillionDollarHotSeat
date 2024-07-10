@@ -21,8 +21,16 @@ class CreateAccountWindow(Screen):
     # Define the submit method for account creation
     def submit(self):               
         # Check if the form inputs are valid, calling invalidForm() if not valid
-        if self.username.text != "" and self.email.text != "" and self.email.text.count("@") == 1 and self.email.text.count(".") > 0:   
-            if self.password != "":                                                                 
+        if self.username.text != "" and self.email.text != "" and self.email.text.count("@") == 1 and self.email.text.count(".") > 0:  
+
+            # check if the user's email already exists
+            if UserDetails.get_user(self.email.text) != -1:
+                # check if password is entered or not - this will impact on the error message printed
+                if self.password.text == "":
+                    invalidForm()    
+                else:
+                    alreadyExists()
+            elif self.password.text != "":                                                                 
                 UserDetails.add_user(self.email.text, self.password.text, self.username.text)       
 
                 self.reset()                                                                        
@@ -104,19 +112,35 @@ class WindowManager(ScreenManager):
     pass                                        
 
 # Define the invalid login popup
-def invalidLogin():                                                     
-    pop = Popup(title='Invalid Login',                                  
-                  content=Label(text='Invalid username or password.'),
-                  size_hint=(None, None), size=(400, 400))              
-    pop.open()                                                          
+def invalidLogin():   
+    pop = Popup(title='Invalid Login', 
+    content=Label(text='Invalid username or password.',
+                    size_hint=(None, None), size=(480, 480), 
+                    text_size=(480, None), 
+                    halign='center', valign='middle'), 
+    size_hint=(None, None), size=(500, 500))
+    pop.open()                                                                                                             
 
 # Define the invalid form popup
-def invalidForm():                                                                          
-    pop = Popup(title='Invalid Form',                                                       
-                  content=Label(text='Please fill in all inputs with valid information.'),
-                  size_hint=(None, None), size=(400, 400))
+def invalidForm():      
+    # also wrap the text so it doesn't go over the margin
+    pop = Popup(title='Invalid Form',
+    content=Label(text='Please fill in all inputs with valid information.',
+                    size_hint=(None, None), size=(480, 480), 
+                    text_size=(480, None), 
+                    halign='center', valign='middle'), 
+    size_hint=(None, None), size=(500, 500))
+    pop.open()    
 
-    pop.open()                                                                              
+# let user know the email already exists
+def alreadyExists():
+    pop = Popup(title='Existing account',
+    content=Label(text='The email you entered already exists! Please try again',
+                    size_hint=(None, None), size=(480, 480), 
+                    text_size=(480, None), 
+                    halign='center', valign='middle'), 
+    size_hint=(None, None), size=(500, 500))
+    pop.open()                                                                    
 
 # Load the Kivy language file that defines our screen conditions
 kv = Builder.load_file("my.kv")             
