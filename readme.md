@@ -15,3 +15,9 @@ For the code to work, you will need to install a set of libraries in your termin
 To make the program running as seamless as possible, please ensure that you are in the AI.EVC_2021 folder. Once you are there, you can run the following command, which will load the game:
 
 `python3 runapp.py`
+
+## Begining the game
+Upon running the above, you will get to a page asking for login details. You can either create 
+
+# Disclaimer
+Please note that the answers to the questions were correct as of July 2021 - I will look to update this to new questions or use a question API to have a wider question bank. 
