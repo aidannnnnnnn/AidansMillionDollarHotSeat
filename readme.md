@@ -17,7 +17,7 @@ To make the program running as seamless as possible, please ensure that you are 
 `python3 runapp.py`
 
 ## Begining the game
-Upon running the above, you will get to a page asking for login details. You can either create 
+Upon running the above, you will get to a page asking for login details. You can either create an account or login to our test account.
 
 # Disclaimer
 Please note that the answers to the questions were correct as of July 2021 - I will look to update this to new questions or use a question API to have a wider question bank. 
