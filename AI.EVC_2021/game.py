@@ -97,11 +97,6 @@ class Quiz:
             # Destroys/Ends the GUI                        
             gui.destroy()                                                                           
 
-    # if the user presses the help button (Open the Help Page)
-    def OpenWeb(self): 
-        # opens the help page. New = 1 references that the help page will open in a new window.
-        webbrowser.open('https://aidanrobinson264.wixsite.com/AIEVC', new=1) 
-
     # Declares what happens if the user presses the next button after a correct answer
     def NextButton(self): 
         if self.CheckAnswer(self.QuestionNumber):     
@@ -177,9 +172,6 @@ class Quiz:
     def Buttons(self):
         NextButton = Button(gui, text="Next", command=self.NextButton, width=10, bg="green", fg="green", font=("ariel", 16, "bold"))     
         NextButton.place(x=350, y=450) 
-
-        Help_Button = Button(gui, text="Help", command=self.OpenWeb, width=5, bg="green", fg="green", font=("ariel", 16, " bold"))  
-        Help_Button.place(x=700, y=60) 
 
         Quit_Button = Button(gui, text="Quit", command=self.QuitApp, width=5, bg="green", fg="green", font=("ariel", 16, " bold"))  
         Quit_Button.place(x=700, y=90) 
