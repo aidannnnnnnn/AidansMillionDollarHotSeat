@@ -31,6 +31,7 @@ To make the program running as seamless as possible, please ensure that you are 
 Upon running the above, you will get to a page asking for login details. You can either create an account (by pressing the "Don't have an Account? Create One" button) or login to our test account. The details for the test account are as follows (included as this does not risk data):
 
 `Username: test@test.test`
+
 `Password: test`
 
 Once you have entered your details to login, you can press the "Game" button, then the "Play game" button. This will take you to the Instructions page for the game, listing the rules for playing this game. Once you are ready to play, you can press the "Press this button to Play" game, which takes you to begin playing the game. 
@@ -49,7 +50,7 @@ At any time, you are able to quit the game, which returns you to the instruction
 # Disclaimer
 Please note that the answers to the questions were correct as of July 2021 - I will look to update this to new questions or use a question API to have a wider question bank. 
 
-# Contact me: 
+# Contact me
 If you have any questions or comments, please feel free to contact me by the following:
 
 - [LinkedIn](www.linkedin.com/in/aidan-robinson-102439264)
